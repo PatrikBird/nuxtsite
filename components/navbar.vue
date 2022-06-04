@@ -14,24 +14,7 @@ import { toggleDark, isDark } from "~/composables/dark";
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <router-link to="/blog" title="Blog">
-          <div class="i-line-md-pencil text-xl"></div>
-        </router-link>
-        <a href="https://twitter.com/patbirdme" target="_blank" title="Twitter">
-          <div class="i-line-md-twitter text-xl"></div>
-        </a>
-        <a href="https://github.com/patrikbird" target="_blank" title="GitHub">
-          <div class="i-line-md-github-loop text-xl"></div>
-        </a>
-        <a
-          href="https://linkedin.com/in/patbirdme"
-          target="_blank"
-          title="LinkedIn"
-        >
-          <div class="i-line-md-linkedin text-xl"></div>
-        </a>
-        <button
-          type="button"
+        <div
           class="icon-btn"
           :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
           @click="toggleDark()"
@@ -41,7 +24,34 @@ import { toggleDark, isDark } from "~/composables/dark";
             class="text-xl"
             aria-hidden="true"
           />
-        </button>
+        </div>
+        <router-link to="/blog" title="Blog">
+          <div class="i-line-md-pencil text-xl"></div>
+        </router-link>
+        <a
+          href="https://twitter.com/patbirdme"
+          target="_blank"
+          title="Twitter"
+          class="ext"
+        >
+          <div class="i-line-md-twitter text-xl"></div>
+        </a>
+        <a
+          href="https://github.com/patrikbird"
+          target="_blank"
+          title="GitHub"
+          class="ext"
+        >
+          <div class="i-line-md-github-loop text-xl"></div>
+        </a>
+        <a
+          href="https://linkedin.com/in/patbirdme"
+          target="_blank"
+          title="LinkedIn"
+          class="ext"
+        >
+          <div class="i-line-md-linkedin text-xl"></div>
+        </a>
       </div>
     </nav>
   </header>
@@ -82,9 +92,6 @@ import { toggleDark, isDark } from "~/composables/dark";
 
 .nav .right > * {
   margin: auto;
-}
-
-.nav a {
   position: relative;
   cursor: pointer;
   text-decoration: none;
@@ -93,41 +100,33 @@ import { toggleDark, isDark } from "~/composables/dark";
   opacity: 0.6;
   outline: none;
 }
-.nav a:hover {
+
+.nav .right > *:hover {
   opacity: 1;
+  transition: all 0.4s ease;
 }
 
-.nav a:after,
-.nav a:before {
+/* external link arrow */
+.nav .ext:after,
+.nav .ext:before {
   content: "";
   position: absolute;
   display: block;
   border: 0px solid transparent;
   width: 0%;
   height: 0%;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
-
-.nav a:after {
+.nav .ext:after {
   width: 0%;
   height: 0%;
   top: 0;
-  left: 0;
-  border-top: 2px solid transparent;
-  border-left: 2px solid transparent;
-}
-
-.nav a:before {
-  width: 0%;
-  height: 0%;
   right: 0;
-  bottom: 0;
-  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
   border-right: 2px solid transparent;
 }
-
-.nav a:hover::before,
-.nav a:hover::after {
+.nav .ext:hover::before,
+.nav .ext:hover::after {
   width: 10px;
   height: 10px;
   border-color: #222;
