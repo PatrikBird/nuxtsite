@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@iconify-json/ic': ^1.1.4
   '@iconify-json/line-md': ^1.1.5
   '@unocss/nuxt': ^0.34.1
   nuxt: 3.0.0-rc.3
@@ -8,6 +9,7 @@ specifiers:
   webpack: '>=4.0.0 <5.0.0 || >=5.0.0 <6.0.0'
 
 devDependencies:
+  '@iconify-json/ic': 1.1.4
   '@iconify-json/line-md': 1.1.5
   '@unocss/nuxt': 0.34.1_vite@2.9.9+webpack@5.72.1
   nuxt: 3.0.0-rc.3_vite@2.9.9+webpack@5.72.1
@@ -333,6 +335,12 @@ packages:
     resolution: {integrity: sha512-MVbXLbTcAotOPUj0pAMhVtJ+3/kFkwJqc5qNOleOZTv6QkZZABDMS21dSrSlVswEHwrpWC03e4fWytjqKvuE2A==}
     dependencies:
       mime: 3.0.0
+    dev: true
+
+  /@iconify-json/ic/1.1.4:
+    resolution: {integrity: sha512-NkcyCh3VHwm3L19Ys4PDnbJmMoSE6vd83xjfWofmoeKKebs4tktz/LhPIy9vcaDqRENTNVtDORQdv0e+HCOjSg==}
+    dependencies:
+      '@iconify/types': 1.1.0
     dev: true
 
   /@iconify-json/line-md/1.1.5:
