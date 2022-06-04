@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { toggleDark, isDark } from "~/composables/dark";
+</script>
+
 <template>
   <header class="header">
     <router-link
@@ -26,6 +30,18 @@
         >
           <div class="i-line-md-linkedin text-xl"></div>
         </a>
+        <button
+          type="button"
+          class="icon-btn"
+          :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+          @click="toggleDark()"
+        >
+          <div
+            i="ic-outline-dark-mode dark:ic-outline-wb-sunny"
+            class="text-xl"
+            aria-hidden="true"
+          />
+        </button>
       </div>
     </nav>
   </header>

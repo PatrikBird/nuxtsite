@@ -10,7 +10,12 @@ export default defineNuxtConfig({
     attributify: true, // enabled `@unocss/preset-attributify`,
 
     // core options
-    shortcuts: [],
+    shortcuts: [
+      [
+        "icon-btn",
+        "inline-block border-none p-0 bg-auto cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600",
+      ],
+    ],
     rules: [],
   },
 });
