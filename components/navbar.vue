@@ -10,19 +10,21 @@
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <router-link to="/blog">Blog</router-link>
+        <router-link to="/blog" title="Blog">
+          <div class="i-line-md-pencil text-xl"></div>
+        </router-link>
         <a href="https://twitter.com/patbirdme" target="_blank" title="Twitter">
-          Twitter
+          <div class="i-line-md-twitter text-xl"></div>
         </a>
         <a href="https://github.com/patrikbird" target="_blank" title="GitHub">
-          GitHub
+          <div class="i-line-md-github-loop text-xl"></div>
         </a>
         <a
           href="https://linkedin.com/in/patbirdme"
           target="_blank"
           title="LinkedIn"
         >
-          LinkedIn
+          <div class="i-line-md-linkedin text-xl"></div>
         </a>
       </div>
     </nav>
@@ -56,20 +58,6 @@
   margin-bottom: 0;
 }
 
-.nav a {
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.2s ease;
-  opacity: 0.6;
-  outline: none;
-}
-
-.nav a:hover {
-  opacity: 1;
-  text-decoration-color: inherit;
-}
-
 .nav .right {
   display: grid;
   grid-gap: 1.2rem;
@@ -78,5 +66,54 @@
 
 .nav .right > * {
   margin: auto;
+}
+
+.nav a {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  padding: 1em;
+  opacity: 0.6;
+  outline: none;
+}
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav a:after,
+.nav a:before {
+  content: "";
+  position: absolute;
+  display: block;
+  border: 0px solid transparent;
+  width: 0%;
+  height: 0%;
+  transition: all 0.3s ease;
+}
+
+.nav a:after {
+  width: 0%;
+  height: 0%;
+  top: 0;
+  left: 0;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+}
+
+.nav a:before {
+  width: 0%;
+  height: 0%;
+  right: 0;
+  bottom: 0;
+  border-bottom: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+.nav a:hover::before,
+.nav a:hover::after {
+  width: 10px;
+  height: 10px;
+  border-color: #222;
 }
 </style>
