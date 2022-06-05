@@ -11,16 +11,16 @@ useHead({
     // },
   ],
   charset: "utf-8",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
-  // link: [
-  //   {
-  //     rel: "icon",
-  //     type: "image/svg+xml",
-  //     href: computed(() =>
-  //       preferredDark.value ? "/favicon-dark.svg" : "/favicon.svg"
-  //     ),
-  //   },
-  // ],
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+  link: [
+    {
+      rel: "icon",
+      type: "image/svg+xml",
+      href: computed(() =>
+        preferredDark.value ? "/favicon.svg" : "/favicon.svg"
+      ),
+    },
+  ],
 });
 
 definePageMeta({
