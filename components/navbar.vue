@@ -14,7 +14,7 @@ import { toggleDark, isDark } from "~/composables/dark";
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <div
+        <button
           class="icon-btn"
           :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
           @click="toggleDark()"
@@ -24,10 +24,12 @@ import { toggleDark, isDark } from "~/composables/dark";
             class="text-xl"
             aria-hidden="true"
           />
-        </div>
+        </button>
+
         <router-link to="/blog" title="Blog">
           <div class="i-line-md-pencil text-xl"></div>
         </router-link>
+
         <a
           href="https://twitter.com/patbirdme"
           target="_blank"
@@ -36,6 +38,7 @@ import { toggleDark, isDark } from "~/composables/dark";
         >
           <div class="i-line-md-twitter text-xl"></div>
         </a>
+
         <a
           href="https://github.com/patrikbird"
           target="_blank"
@@ -44,6 +47,7 @@ import { toggleDark, isDark } from "~/composables/dark";
         >
           <div class="i-line-md-github-loop text-xl"></div>
         </a>
+
         <a
           href="https://linkedin.com/in/patbirdme"
           target="_blank"
