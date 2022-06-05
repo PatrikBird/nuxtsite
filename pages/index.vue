@@ -5,11 +5,13 @@ useHead({
   title: "Patrik Bird",
   meta: [
     { name: "description", content: "My personal website" },
-    {
-      name: "theme-color",
-      content: computed(() => (isDark.value ? "#00aba9" : "#ffffff")),
-    },
+    // {
+    //   name: "theme-color",
+    //   content: computed(() => (isDark.value ? "#00aba9" : "#ffffff")),
+    // },
   ],
+  charset: "utf-8",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
   // link: [
   //   {
   //     rel: "icon",
