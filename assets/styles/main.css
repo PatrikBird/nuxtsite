@@ -2,6 +2,9 @@
   font-family: "Newsreader";
   src: local("Newsreader"),
     url(~/assets/fonts/Newsreader-VariableFont.ttf) format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
 }
 
 html {
