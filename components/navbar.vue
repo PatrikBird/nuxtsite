@@ -129,6 +129,6 @@ import { toggleDark, isDark } from "~/composables/dark";
 .nav .ext:hover::after {
   width: 10px;
   height: 10px;
-  border-color: #121212;
+  border-color: rgba(79, 192, 141, 0.6);
 }
 </style>

@@ -28,5 +28,8 @@ definePageMeta({
 
 <template>
   <h1>This will be my new Website</h1>
-  <h3>...using Nuxt 3 and UnoCSS</h3>
+  <main>
+    ...using <a href="https://v3.nuxtjs.org">Nuxt 3</a> and
+    <a href="https://uno.antfu.me">UnoCSS</a>
+  </main>
 </template>
