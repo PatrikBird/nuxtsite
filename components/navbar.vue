@@ -14,17 +14,15 @@ import { toggleDark, isDark } from "~/composables/dark";
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <button
+        <div
           class="icon-btn"
           :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
           @click="toggleDark()"
         >
           <div
-            i="ic-outline-dark-mode dark:ic-outline-wb-sunny"
-            class="text-xl"
-            aria-hidden="true"
+            class="i-ic-outline-wb-sunny dark:i-ic-outline-dark-mode text-xl"
           />
-        </button>
+        </div>
 
         <router-link to="/blog" title="Blog">
           <div class="i-line-md-pencil text-xl"></div>
@@ -62,7 +60,7 @@ import { toggleDark, isDark } from "~/composables/dark";
 </template>
 
 <style scoped>
-.header h1 {
+.header {
   margin-bottom: 0;
 }
 
@@ -73,7 +71,7 @@ import { toggleDark, isDark } from "~/composables/dark";
 }
 
 .nav {
-  padding: 2rem;
+  padding: 0.5rem 0.5rem 0 0;
   width: 100%;
   display: grid;
   grid-template-columns: auto max-content;
