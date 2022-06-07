@@ -15,7 +15,6 @@ import { toggleDark, isDark } from "~/composables/dark";
       <div class="spacer" />
       <div class="right">
         <div
-          class="icon-btn"
           :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
           @click="toggleDark()"
         >
