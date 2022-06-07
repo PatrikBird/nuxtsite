@@ -2,7 +2,18 @@ import { defineNuxtConfig } from "nuxt";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ["@unocss/nuxt"],
+  modules: ["@unocss/nuxt", "@nuxt/content"],
+  content: {
+    markdown: {
+      toc: {
+        depth: 3,
+        searchDepth: 3,
+      },
+    },
+    highlight: {
+      theme: "dracula-soft",
+    },
+  },
   unocss: {
     // presets
     uno: true, // enabled `@unocss/preset-uno`
