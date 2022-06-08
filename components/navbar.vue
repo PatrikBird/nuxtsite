@@ -4,13 +4,13 @@ import { toggleDark, isDark } from "~/composables/dark";
 
 <template>
   <header class="header">
-    <router-link
+    <Nuxt-Link
       class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none"
       to="/"
       focusable="false"
     >
       Img
-    </router-link>
+    </Nuxt-Link>
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
@@ -23,9 +23,9 @@ import { toggleDark, isDark } from "~/composables/dark";
           />
         </div>
 
-        <router-link to="/blog" title="Blog">
+        <Nuxt-Link to="/blog" title="Blog">
           <div class="i-line-md-pencil text-xl"></div>
-        </router-link>
+        </Nuxt-Link>
 
         <a
           href="https://twitter.com/patbirdme"
