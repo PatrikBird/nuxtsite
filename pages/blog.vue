@@ -6,47 +6,31 @@ definePageMeta({
 const blogNav = await useAsyncData("navigation", () => {
   return fetchContentNavigation(queryContent("blog"));
 });
+console.log(blogNav);
+
+// get todays date in the format 20th of July 2020
+const today = new Date();
+const dd = String(today.getDate()).padStart(2, "0");
+const mm = String(today.getMonth() + 1).padStart(2, "0");
+const yyyy = today.getFullYear();
+const todayDate = `${dd}/${mm}/${yyyy}`;
 </script>
 
 <template>
   <h1>This is where the Blog goes!</h1>
-
-  <div
-    class="relative block p-8 my-5 max-w-md	overflow-hidden border border-gray-300 rounded-lg bg-gray-100 dark:bg-dark-800 shadow hover:shadow-lg transition ease-in-out delay-100 duration-300"
-  >
-    <span class="absolute inset-x-0 bottom-0 h-2 gradient"></span>
-
-    <div class="justify-between sm:flex">
-      <div>
-        <h5 class="text-xl font-bold">
-          Building a SaaS product as a software developer
-        </h5>
-      </div>
-    </div>
-
-    <div class="mt-4 sm:pr-8">
-      <p class="text-sm text-gray-500">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. At velit illum
-        provident a, ipsa maiores deleniti consectetur nobis et eaque.
-      </p>
-    </div>
-
-    <dl class="flex mt-6 justify-between">
-      <div class="flex flex-col-reverse">
-        <dd class="text-xs text-gray-500">31st June, 2021</dd>
-        <dt class="text-sm font-medium text-gray-600">Published</dt>
-      </div>
-
-      <div class="flex flex-col-reverse ml-3 sm:ml-6">
-        <dd class="text-xs text-gray-500">3 minute</dd>
-        <dt class="text-sm font-medium text-gray-600">Reading time</dt>
-      </div>
-    </dl>
-  </div>
+  <blog-item
+    v-for="(item, index) in blogNav"
+    :key="`blogItem-${item}-${index}`"
+    link="#"
+    title="item.title"
+    description="Some excerpt from my article to describe the blog posts a little bit"
+    :published-on="todayDate"
+    reading-time-est="2 seconds"
+  ></blog-item>
 </template>
 
-<style scoped>
-.gradient {
+<!-- <style scoped lang="scss">
+ .gradient {
   background-image: linear-gradient(
     50deg,
     hsl(153deg 47% 53%) 0%,
@@ -68,5 +52,5 @@ const blogNav = await useAsyncData("navigation", () => {
     hsl(234deg 34% 69%) 85%,
     hsl(231deg 48% 69%) 100%
   );
-}
-</style>
+} 
+</style> -->
