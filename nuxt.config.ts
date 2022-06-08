@@ -29,7 +29,7 @@ export default defineNuxtConfig({
     ],
     rules: [],
   },
-  css: ["~/assets/styles/main.css"],
+  css: ["@unocss/reset/tailwind.css", "~/assets/styles/main.css"],
   // head: {
   //   title: "From the nuxt.config",
   //   meta: [
