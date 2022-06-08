@@ -1,3 +1,5 @@
+@import "./base.css";
+
 /* Anthony's addition */
 .dark {
   color-scheme: dark;
@@ -19,6 +21,7 @@ div[row=""] {
 div[block=""] {
   display: block;
 }
+/* Anthony's addition END */
 
 @font-face {
   font-family: "Newsreader";
