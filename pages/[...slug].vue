@@ -6,6 +6,8 @@ definePageMeta({
 
 <template>
   <main>
-    <ContentDoc />
+    <ContentDoc>
+      <template #not-found> 404 - Article not found </template>
+    </ContentDoc>
   </main>
 </template>
