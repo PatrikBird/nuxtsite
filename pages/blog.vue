@@ -2,15 +2,9 @@
 definePageMeta({
   layout: "blog",
 });
-
-const { data } = await useAsyncData("blogContent", () => queryContent("blog").find());
-
-// get todays date in the format 20th of July 2020
-const today = new Date();
-const dd = String(today.getDate()).padStart(2, "0");
-const mm = String(today.getMonth() + 1).padStart(2, "0");
-const yyyy = today.getFullYear();
-const todayDate = `${dd}/${mm}/${yyyy}`;
+const { data } = await useAsyncData("blogContent", () =>
+  queryContent("blog").find()
+);
 </script>
 
 <template>
@@ -22,8 +16,8 @@ const todayDate = `${dd}/${mm}/${yyyy}`;
       :link="item._path"
       :title="item.head.title"
       :description="item.description"
-      :published-on="todayDate"
-      reading-time-est="2 seconds"
+      :published-on="item.date"
+      :reading-time-est="item.est"
     ></blog-item>
   </div>
 </template>
