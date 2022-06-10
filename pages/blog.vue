@@ -3,10 +3,7 @@ definePageMeta({
   layout: "blog",
 });
 
-const blogNav = await useAsyncData("navigation", () => {
-  return fetchContentNavigation(queryContent("blog"));
-});
-console.log(blogNav);
+const { data } = await useAsyncData("blogContent", () => queryContent("blog").find());
 
 // get todays date in the format 20th of July 2020
 const today = new Date();
@@ -17,16 +14,18 @@ const todayDate = `${dd}/${mm}/${yyyy}`;
 </script>
 
 <template>
-  <h1>This is where the Blog goes!</h1>
-  <blog-item
-    v-for="(item, index) in blogNav"
-    :key="`blogItem-${item}-${index}`"
-    link="#"
-    title="item.title"
-    description="Some excerpt from my article to describe the blog posts a little bit"
-    :published-on="todayDate"
-    reading-time-est="2 seconds"
-  ></blog-item>
+  <div>
+    <h1>Blog</h1>
+    <blog-item
+      v-for="(item, index) in data"
+      :key="`blogItem-${item}-${index}`"
+      :link="item._path"
+      :title="item.head.title"
+      :description="item.description"
+      :published-on="todayDate"
+      reading-time-est="2 seconds"
+    ></blog-item>
+  </div>
 </template>
 
 <!-- <style scoped lang="scss">
