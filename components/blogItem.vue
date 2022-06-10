@@ -12,7 +12,7 @@ const props = defineProps<{
   <article>
     <a
       class="relative block pt-3 px-8 mb-5 max-w-md overflow-hidden border border-gray-100 rounded-lg hover:bg-gray-100"
-      transition="ease-in-out delay-100 duration-300"
+      transition="ease-in-out duration-300"
       shadow="sm hover:lg"
       :href="link"
     >
