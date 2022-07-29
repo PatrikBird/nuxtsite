@@ -7,14 +7,14 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@iconify-json/ic": "^1.1.7",
+    "@iconify-json/ic": "^1.1.8",
     "@iconify-json/line-md": "^1.1.13",
     "@nuxt/content": "^2.0.1",
-    "@unocss/nuxt": "^0.34.1",
-    "nuxt": "3.0.0-rc.3",
+    "@unocss/nuxt": "^0.45.1",
+    "nuxt": "3.0.0-rc.6",
     "sass": "^1.54.0",
     "vite": "^2.9.14",
-    "webpack": "^5.73.0"
+    "webpack": "^5.74.0"
   },
   "peerDependencies": {
     "vite": ">=2.9.0 <3.0.0",
